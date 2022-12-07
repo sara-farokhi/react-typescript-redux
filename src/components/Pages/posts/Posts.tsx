@@ -14,7 +14,7 @@ const Posts = () => {
   }, [dispatch])
 
   const deleteItem = (id:number)=>{
-    console.log(id)
+    
   }
   
 
