@@ -4,8 +4,6 @@ import AddPost from '../../components/Pages/posts/AddPost'
 import EditPost from '../../components/Pages/posts/EditPost'
 import Posts from '../../components/Pages/posts/Posts'
 
-
-
 const PostsRouter = () => {
   return (
     <Routes>
