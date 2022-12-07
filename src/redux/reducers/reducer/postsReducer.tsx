@@ -1,5 +1,5 @@
 import { actionTypes } from "../../../actionTypes";
-import { initState, Action } from "../../../interfaces/posts/interfaces";
+import { initState, Action, post } from "../../../interfaces/posts/interfaces";
 
 
 const initialState: initState = {
@@ -12,8 +12,10 @@ const postReducer = (state = initialState, action: Action): initState => {
             return { ...state, posts: action.payload }
         case actionTypes.SET_POST:
             return { ...state, posts: [...state.posts, action.payload] }
+        case actionTypes.DELETE_POST:
+            return { ...state, posts: state.posts.filter((post:post) => post.id !== action.payload) }
         default:
-            return initialState
+            return initialState 
 
     }
 }

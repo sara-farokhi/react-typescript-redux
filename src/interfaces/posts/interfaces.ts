@@ -10,7 +10,7 @@ export interface newPost {
 }
 
 export interface post extends newPost {
-    id?: number ;
+    id?: number;
 }
 
 interface getPostAction {
@@ -21,6 +21,10 @@ interface setPostAction {
     type: actionTypes.SET_POST,
     payload: post
 }
+interface deLetePostAction {
+    type: actionTypes.DELETE_POST,
+    payload: number
+}
 
-export type Action = getPostAction | setPostAction
+export type Action = getPostAction | setPostAction | deLetePostAction
 
