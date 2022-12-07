@@ -11,7 +11,6 @@ const postReducer = (state = initialState, action: Action): initState => {
         case actionTypes.GET_POSTS:
             return { ...state, posts: action.payload }
         case actionTypes.SET_POST:
-            console.log(action.payload)
             return { ...state, posts: [...state.posts, action.payload] }
         default:
             return initialState
