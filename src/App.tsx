@@ -1,7 +1,7 @@
 import Header from "./components/layout/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import AboutProject from "./components/Pages/about/AboutProject";
-import PostsRouter from "./components/Pages/posts/PostsRouter/PostsRouter";
+import PostsRouter from "../src/routes/PostsRouter/PostsRouter";
 
 
 function App() {
@@ -17,9 +17,6 @@ function App() {
             <Route path="/posts/*" element={<PostsRouter />}></Route>
           </Routes>
         </div>
-
-
-
       </BrowserRouter>
     </>
   );

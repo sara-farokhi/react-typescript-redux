@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes } from "react-router-dom"
-import AddPost from '../AddPost'
-import EditPost from '../EditPost'
-import Posts from '../Posts'
+import AddPost from '../../components/Pages/posts/AddPost'
+import EditPost from '../../components/Pages/posts/EditPost'
+import Posts from '../../components/Pages/posts/Posts'
 
 
 
