@@ -9,7 +9,7 @@ const PostsRouter = () => {
     <Routes>
       <Route path='/' element={<Posts />} />
       <Route path='/add' element={<AddPost />} />
-      <Route path='/edit' element={<EditPost />} />
+      <Route path='/edit/:id' element={<EditPost />} />
     </Routes>
   )
 }

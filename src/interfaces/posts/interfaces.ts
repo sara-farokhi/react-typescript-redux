@@ -25,6 +25,10 @@ interface deLetePostAction {
     type: actionTypes.DELETE_POST,
     payload: number
 }
+interface updatePostAction {
+    type: actionTypes.UPDATE_POST,
+    payload: post
+}
 
-export type Action = getPostAction | setPostAction | deLetePostAction
+export type Action = getPostAction | setPostAction | deLetePostAction | updatePostAction
 
