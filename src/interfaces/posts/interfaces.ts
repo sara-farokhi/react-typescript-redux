@@ -1,7 +1,8 @@
 import { actionTypes } from "../../actionTypes";
 
 export interface initState {
-    posts: post[]
+    posts: post[];
+    loading: boolean
 }
 
 export interface newPost {
@@ -29,6 +30,10 @@ interface updatePostAction {
     type: actionTypes.UPDATE_POST,
     payload: post
 }
+interface setLoading {
+    type: actionTypes.SET_LOADING,
+    payload: boolean
+}
 
-export type Action = getPostAction | setPostAction | deLetePostAction | updatePostAction
+export type Action = getPostAction | setPostAction | deLetePostAction | updatePostAction | setLoading
 

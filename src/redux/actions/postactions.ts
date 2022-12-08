@@ -20,7 +20,7 @@ export const addPost = (newPost: newPost): any => async (dispatch: Dispatch<Acti
 
 // update post
 export const editPost = (updatedData: post): any => async (dispatch: Dispatch<Action>) => {
-    const { data } = await axios.put <newPost>(`http://localhost:3004/posts/${updatedData.id}`, updatedData)
+    const { data } = await axios.put<newPost>(`http://localhost:3004/posts/${updatedData.id}`, updatedData)
     dispatch({ type: actionTypes.UPDATE_POST, payload: data })
 }
 
@@ -29,3 +29,7 @@ export const deletPost = (id: number): any => async (dispatch: Dispatch<Action>)
     await axios.delete(`http://localhost:3004/posts/${id}`)
     dispatch({ type: actionTypes.DELETE_POST, payload: id })
 }
+
+// set loading
+export const setLoading = (status: boolean): any => ({ type: actionTypes.SET_LOADING, payload: status })
+

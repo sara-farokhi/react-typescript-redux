@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const Posts = () => {
   const dispatch = useDispatch()
-  const { posts } = useSelector(state => state.posts)
+  const { posts, loading } = useSelector(state => state.posts)
 
   useEffect(() => {
     dispatch(getPosts())
@@ -16,10 +16,12 @@ const Posts = () => {
   const deleteItem = (id: number) => {
     dispatch(deletPost(id))
   }
-
-
+  if (loading) {
+    return <> Loading</>
+  }
   return (
     <>
+
       {posts!.length > 0 && <div>
         <Link to='/posts/add' > <div className="btn btn-success">Add Post</div></Link>
         <div className="row">

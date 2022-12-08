@@ -1,15 +1,15 @@
 
 import { useParams } from "react-router-dom"
 import { useDispatch } from "react-redux"
-// import useSelector from "../../../hooks/useTypeSelector"
+import useSelector from "../../../hooks/useTypeSelector"
 import React, { useEffect, useState } from "react"
-import { editPost } from "../../../redux/actions/postactions"
+import { editPost, setLoading } from "../../../redux/actions/postactions"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 
 const EditPost = () => {
-  // const { loading } = useSelector(state => state.posts)
+  const { loading } = useSelector(state => state.posts)
   const dispatch = useDispatch()
   const { id } = useParams()
   const navigate = useNavigate()
@@ -18,11 +18,11 @@ const EditPost = () => {
 
   useEffect(() => {
     const setCurrent = async (id: number) => {
-      // dispatch(setLoading(true))
+      dispatch(setLoading(true))
       const res = await axios.get(`http://localhost:3004/posts/${id}`)
       setBody(res.data.body)
       setTitle(res.data.title)
-      // dispatch(setLoading(false))
+      dispatch(setLoading(false))
     }
     setCurrent(+id!)
   }, [dispatch, id])
@@ -41,7 +41,7 @@ const EditPost = () => {
   return (
     <>
       {
-        // loading ? <h2>Loading...</h2> :
+        loading ? <h2>Loading...</h2> :
         <form
           onSubmit={(e) => UpdatePost(e)}
         >
